@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 2: Student Data Manager - Wireframe</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            color: white;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #10b981, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            color: #cbd5e1;
+            font-size: 1.1rem;
+        }
+
+        .project-header {
+            background: #10b981;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .icon-box {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+
+        .project-title {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .project-type {
+            font-size: 1.25rem;
+            opacity: 0.9;
+        }
+
+        .section {
+            background: #1e293b;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .tech-card {
+            background: #334155;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+        }
+
+        .tech-category {
+            color: #34d399;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            text-transform: capitalize;
+            font-size: 1.1rem;
+        }
+
+        .tech-list {
+            list-style: none;
+        }
+
+        .tech-list li {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            padding: 0.35rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .check {
+            color: #10b981;
+            margin-top: 0.25rem;
+            font-weight: bold;
+        }
+
+        .api-endpoint {
+            background: #334155;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .method {
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            font-family: monospace;
+            font-weight: bold;
+            font-size: 0.875rem;
+        }
+
+        .method.get { background: #3b82f6; }
+        .method.post { background: #10b981; }
+        .method.put { background: #eab308; }
+        .method.delete { background: #ef4444; }
+
+        .route {
+            color: #c084fc;
+            font-family: monospace;
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .endpoint-desc {
+            color: #94a3b8;
+            font-size: 0.875rem;
+        }
+
+        .schema-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1rem;
+        }
+
+        .schema-card {
+            background: #334155;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+        }
+
+        .schema-title {
+            color: #10b981;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .schema-field {
+            background: #1e293b;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            border-radius: 0.25rem;
+            font-family: monospace;
+            font-size: 0.8rem;
+            color: #cbd5e1;
+        }
+
+        .wireframe-card {
+            background: #1e293b;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+        }
+
+        .wireframe-title {
+            color: #6ee7b7;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .wireframe-desc {
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .components-box {
+            background: #334155;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+        }
+
+        .components-title {
+            color: #c084fc;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .component-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            line-height: 1.5;
+        }
+
+        .arrow {
+            color: #10b981;
+            margin-top: 0.25rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            .tech-grid,
+            .schema-grid,
+            .component-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Project 2: Student Data Manager</h1>
+            <p class="subtitle">Backend Project - Complete Wireframe & Tech Stack</p>
+        </header>
+
+        <div class="project-header">
+            <div class="header-content">
+                <div class="icon-box">
+                    <i data-lucide="database" style="width: 32px; height: 32px;"></i>
+                </div>
+                <div>
+                    <div class="project-title">Simple Student Data Manager</div>
+                    <div class="project-type">Backend Project</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title"><span>⚙️</span> Technology Stack</h3>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-category">Backend</div>
+                    <ul class="tech-list">
+                        <li><span class="check">✓</span> Node.js (v18+)</li>
+                        <li><span class="check">✓</span> Express.js 4.x</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-category">Database</div>
+                    <ul class="tech-list">
+                        <li><span class="check">✓</span> MongoDB with Mongoose ODM</li>
+                        <li><span class="check">✓</span> MongoDB Atlas (cloud hosting)</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-category">API</div>
+                    <ul class="tech-list">
+                        <li><span class="check">✓</span> RESTful API design</li>
+                        <li><span class="check">✓</span> JSON responses</li>
+                        <li><span class="check">✓</span> HTTP status codes</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-category">Authentication</div>
+                    <ul class="tech-list">
+                        <li><span class="check">✓</span> JWT (JSON Web Tokens)</li>
+                        <li><span class="check">✓</span> bcrypt for password hashing</li>
+                        <li><span class="check">✓</span> express-session</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-category">Validation</div>
+                    <ul class="tech-list">
+                        <li><span class="check">✓</span> express-validator</li>
+                        <li><span class="check">✓</span> Joi schema validation</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-category">Security</div>
+                    <ul class="tech-list">
+                        <li><span class="check">✓</span> Helmet.js</li>
+                        <li><span class="check">✓</span> CORS</li>
+                        <li><span class="check">✓</span> Rate limiting</li>
+                        <li><span class="check">✓</span> Input sanitization</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-category">Testing</div>
+                    <ul class="tech-list">
+                        <li><span class="check">✓</span> Postman</li>
+                        <li><span class="check">✓</span> Jest (unit tests)</li>
+                        <li><span class="check">✓</span> Supertest (API tests)</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-category">Tools</div>
+                    <ul class="tech-list">
+                        <li><span class="check">✓</span> nodemon</li>
+                        <li><span class="check">✓</span> dotenv</li>
+                        <li><span class="check">✓</span> morgan (logging)</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-category">Deployment</div>
+                    <ul class="tech-list">
+                        <li><span class="check">✓</span> Heroku</li>
+                        <li><span class="check">✓</span> Railway</li>
+                        <li><span class="check">✓</span> Render</li>
+                        <li><span class="check">✓</span> MongoDB Atlas</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title"><span>🔌</span> API Endpoints</h3>
+            <div class="api-endpoint">
+                <span class="method post">POST</span>
+                <code class="route">/api/auth/register</code>
+                <span class="endpoint-desc">Register new teacher account</span>
+            </div>
+            <div class="api-endpoint">
+                <span class="method post">POST</span>
+                <code class="route">/api/auth/login</code>
+                <span class="endpoint-desc">Teacher login and JWT generation</span>
+            </div>
+            <div class="api-endpoint">
+                <span class="method get">GET</span>
+                <code class="route">/api/students</code>
+                <span class="endpoint-desc">Get all students for logged-in teacher</span>
+            </div>
+            <div class="api-endpoint">
+                <span class="method get">GET</span>
+                <code class="route">/api/students/:id</code>
+                <span class="endpoint-desc">Get single student details</span>
+            </div>
+            <div class="api-endpoint">
+                <span class="method post">POST</span>
+                <code class="route">/api/students</code>
+                <span class="endpoint-desc">Add new student</span>
+            </div>
+            <div class="api-endpoint">
+                <span class="method put">PUT</span>
+                <code class="route">/api/students/:id</code>
+                <span class="endpoint-desc">Update student information</span>
+            </div>
+            <div class="api-endpoint">
+                <span class="method delete">DELETE</span>
+                <code class="route">/api/students/:id</code>
+                <span class="endpoint-desc">Delete student record</span>
+            </div>
+            <div class="api-endpoint">
+                <span class="method get">GET</span>
+                <code class="route">/api/students/search</code>
+                <span class="endpoint-desc">Search students by name or criteria</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title"><span>🗄️</span> Database Schema</h3>
+            <div class="schema-grid">
+                <div class="schema-card">
+                    <h4 class="schema-title">Teacher Schema</h4>
+                    <div class="schema-field">email (String, unique, required)</div>
+                    <div class="schema-field">password (String, hashed, required)</div>
+                    <div class="schema-field">firstName (String, required)</div>
+                    <div class="schema-field">lastName (String, required)</div>
+                    <div class="schema-field">school (String)</div>
+                    <div class="schema-field">createdAt (Date)</div>
+                    <div class="schema-field">updatedAt (Date)</div>
+                </div>
+                <div class="schema-card">
+                    <h4 class="schema-title">Student Schema</h4>
+                    <div class="schema-field">teacherId (ObjectId, ref: Teacher)</div>
+                    <div class="schema-field">firstName (String, required)</div>
+                    <div class="schema-field">lastName (String, required)</div>
+                    <div class="schema-field">dateOfBirth (Date)</div>
+                    <div class="schema-field">gradeLevel (String)</div>
+                    <div class="schema-field">specialEducationStatus (Boolean)</div>
+                    <div class="schema-field">accommodations (Array of Strings)</div>
+                    <div class="schema-field">contactInfo (Object: parent name, phone, email)</div>
+                    <div class="schema-field">medicalNotes (String)</div>
+                    <div class="schema-field">emergencyContact (Object)</div>
+                    <div class="schema-field">createdAt (Date)</div>
+                    <div class="schema-field">updatedAt (Date)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title"><span>📐</span> System Architecture</h3>
+            
+            <div class="wireframe-card">
+                <h4 class="wireframe-title">API Architecture Diagram</h4>
+                <p class="wireframe-desc">Backend system flow</p>
+                <div class="components-box">
+                    <h5 class="components-title">Components & Layers:</h5>
+                    <div class="component-grid">
+                        <div class="component-item"><span class="arrow">▸</span> Client Layer (Frontend apps, Postman)</div>
+                        <div class="component-item"><span class="arrow">▸</span> API Gateway (Express routes)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Middleware Layer (Auth, validation, error handling)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Controller Layer (Business logic)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Service Layer (Database operations)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Database Layer (MongoDB)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Authentication Flow (JWT verification)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Error Handling Flow</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wireframe-card">
+                <h4 class="wireframe-title">Database Schema Relationships</h4>
+                <p class="wireframe-desc">Data model connections</p>
+                <div class="components-box">
+                    <h5 class="components-title">Components & Features:</h5>
+                    <div class="component-grid">
+                        <div class="component-item"><span class="arrow">▸</span> Teacher collection (parent)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Student collection (child, referenced by teacherId)</div>
+                        <div class="component-item"><span class="arrow">▸</span> One-to-Many relationship diagram</div>
+                        <div class="component-item"><span class="arrow">▸</span> Index strategies for performance</div>
+                        <div class="component-item"><span class="arrow">▸</span> Data validation rules</div>
+                        <div class="component-item"><span class="arrow">▸</span> Cascade delete options</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

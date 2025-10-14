@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 1: Interactive Lesson Planner - Wireframe</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            color: white;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            color: #cbd5e1;
+            font-size: 1.1rem;
+        }
+
+        .project-header {
+            background: #3b82f6;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .icon-box {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+
+        .project-title {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .project-type {
+            font-size: 1.25rem;
+            opacity: 0.9;
+        }
+
+        .section {
+            background: #1e293b;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .tech-card {
+            background: #334155;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+        }
+
+        .tech-category {
+            color: #60a5fa;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            text-transform: capitalize;
+            font-size: 1.1rem;
+        }
+
+        .tech-list {
+            list-style: none;
+        }
+
+        .tech-list li {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            padding: 0.35rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .check {
+            color: #10b981;
+            margin-top: 0.25rem;
+            font-weight: bold;
+        }
+
+        .wireframe-card {
+            background: #1e293b;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+        }
+
+        .wireframe-title {
+            color: #93c5fd;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .wireframe-desc {
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .components-box {
+            background: #334155;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+        }
+
+        .components-title {
+            color: #c084fc;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .component-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            line-height: 1.5;
+        }
+
+        .arrow {
+            color: #10b981;
+            margin-top: 0.25rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            .tech-grid,
+            .component-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Project 1: Interactive Lesson Planner</h1>
+            <p class="subtitle">Frontend Project - Complete Wireframe & Tech Stack</p>
+        </header>
+
+        <div class="project-header">
+            <div class="header-content">
+                <div class="icon-box">
+                    <i data-lucide="layout" style="width: 32px; height: 32px;"></i>
+                </div>
+                <div>
+                    <div class="project-title">Interactive Lesson Planner for Special Education</div>
+                    <div class="project-type">Frontend Project</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title"><span>⚙️</span> Technology Stack</h3>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-category">Core</div>
+                    <ul class="tech-list">
+                        <li><span class="check">✓</span> HTML5</li>
+                        <li><span class="check">✓</span> CSS3</li>
+                        <li><span class="check">✓</span> JavaScript (ES6+)</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-category">Framework</div>
+                    <ul class="tech-list">
+                        <li><span class="check">✓</span> React 18+</li>
+                        <li><span class="check">✓</span> React Hooks (useState, useEffect, useContext)</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-category">Styling</div>
+                    <ul class="tech-list">
+                        <li><span class="check">✓</span> TailwindCSS or Bootstrap 5</li>
+                        <li><span class="check">✓</span> CSS Modules</li>
+                        <li><span class="check">✓</span> Responsive Design (Mobile-First)</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-category">Storage</div>
+                    <ul class="tech-list">
+                        <li><span class="check">✓</span> LocalStorage API</li>
+                        <li><span class="check">✓</span> JSON for data structure</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-category">Accessibility</div>
+                    <ul class="tech-list">
+                        <li><span class="check">✓</span> ARIA labels</li>
+                        <li><span class="check">✓</span> Semantic HTML</li>
+                        <li><span class="check">✓</span> Keyboard navigation</li>
+                        <li><span class="check">✓</span> Screen reader support</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-category">Tools</div>
+                    <ul class="tech-list">
+                        <li><span class="check">✓</span> Vite or Create React App</li>
+                        <li><span class="check">✓</span> Git/GitHub</li>
+                        <li><span class="check">✓</span> ESLint</li>
+                        <li><span class="check">✓</span> Prettier</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-category">Deployment</div>
+                    <ul class="tech-list">
+                        <li><span class="check">✓</span> GitHub Pages</li>
+                        <li><span class="check">✓</span> Netlify</li>
+                        <li><span class="check">✓</span> Vercel</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title"><span>📐</span> Wireframes & Screen Layouts</h3>
+            
+            <div class="wireframe-card">
+                <h4 class="wireframe-title">Dashboard/Home View</h4>
+                <p class="wireframe-desc">Main landing page with overview of all lesson plans</p>
+                <div class="components-box">
+                    <h5 class="components-title">Components & Features:</h5>
+                    <div class="component-grid">
+                        <div class="component-item"><span class="arrow">▸</span> Header with app title and navigation</div>
+                        <div class="component-item"><span class="arrow">▸</span> Quick stats cards (Total Lessons, This Week, Upcoming)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Calendar view toggle</div>
+                        <div class="component-item"><span class="arrow">▸</span> Recent/Upcoming lessons list</div>
+                        <div class="component-item"><span class="arrow">▸</span> Create New Lesson button (prominent CTA)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Filter/Sort options (by date, subject, student group)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Search bar for finding specific lessons</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wireframe-card">
+                <h4 class="wireframe-title">Create/Edit Lesson Form</h4>
+                <p class="wireframe-desc">Comprehensive form for building lesson plans</p>
+                <div class="components-box">
+                    <h5 class="components-title">Components & Features:</h5>
+                    <div class="component-grid">
+                        <div class="component-item"><span class="arrow">▸</span> Lesson Title input</div>
+                        <div class="component-item"><span class="arrow">▸</span> Date/Time picker</div>
+                        <div class="component-item"><span class="arrow">▸</span> Subject dropdown</div>
+                        <div class="component-item"><span class="arrow">▸</span> Student group selector (checkboxes for individual students)</div>
+                        <div class="component-item"><span class="arrow">▸</span> IEP Goals section (searchable, multi-select)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Accommodations needed (checklist with custom additions)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Learning objectives (bullet point list builder)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Materials needed (dynamic list)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Activity timeline (drag-and-drop time blocks)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Assessment methods</div>
+                        <div class="component-item"><span class="arrow">▸</span> Notes/Reflections textarea</div>
+                        <div class="component-item"><span class="arrow">▸</span> Save Draft / Publish buttons</div>
+                        <div class="component-item"><span class="arrow">▸</span> Templates dropdown for quick-start</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wireframe-card">
+                <h4 class="wireframe-title">Lesson Detail View</h4>
+                <p class="wireframe-desc">Full view of a single lesson plan</p>
+                <div class="components-box">
+                    <h5 class="components-title">Components & Features:</h5>
+                    <div class="component-grid">
+                        <div class="component-item"><span class="arrow">▸</span> Lesson header with title, date, subject</div>
+                        <div class="component-item"><span class="arrow">▸</span> Student roster with attendance checkboxes</div>
+                        <div class="component-item"><span class="arrow">▸</span> IEP goals highlighted</div>
+                        <div class="component-item"><span class="arrow">▸</span> Accommodations needed (expandable list)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Step-by-step activity breakdown with timings</div>
+                        <div class="component-item"><span class="arrow">▸</span> Materials checklist</div>
+                        <div class="component-item"><span class="arrow">▸</span> Quick notes section</div>
+                        <div class="component-item"><span class="arrow">▸</span> Edit/Delete/Duplicate buttons</div>
+                        <div class="component-item"><span class="arrow">▸</span> Print-friendly view toggle</div>
+                        <div class="component-item"><span class="arrow">▸</span> Share/Export options</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wireframe-card">
+                <h4 class="wireframe-title">Calendar/Schedule View</h4>
+                <p class="wireframe-desc">Visual calendar showing all planned lessons</p>
+                <div class="components-box">
+                    <h5 class="components-title">Components & Features:</h5>
+                    <div class="component-grid">
+                        <div class="component-item"><span class="arrow">▸</span> Month/Week/Day view toggle</div>
+                        <div class="component-item"><span class="arrow">▸</span> Color-coded lessons by subject</div>
+                        <div class="component-item"><span class="arrow">▸</span> Quick-add button on calendar dates</div>
+                        <div class="component-item"><span class="arrow">▸</span> Lesson preview on hover/tap</div>
+                        <div class="component-item"><span class="arrow">▸</span> Drag-and-drop to reschedule</div>
+                        <div class="component-item"><span class="arrow">▸</span> Filter by student, subject, or IEP goal</div>
+                        <div class="component-item"><span class="arrow">▸</span> Print schedule option</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

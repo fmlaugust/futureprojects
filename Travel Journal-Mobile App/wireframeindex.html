@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 4: Travel Journal - Wireframe</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            color: white;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #f59e0b, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            color: #cbd5e1;
+            font-size: 1.1rem;
+        }
+
+        .project-header {
+            background: #f59e0b;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .icon-box {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+
+        .project-title {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .project-type {
+            font-size: 1.25rem;
+            opacity: 0.9;
+        }
+
+        .section {
+            background: #1e293b;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .tech-card {
+            background: #334155;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+        }
+
+        .tech-category {
+            color: #fbbf24;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            text-transform: capitalize;
+            font-size: 1.1rem;
+        }
+
+        .tech-list {
+            list-style: none;
+        }
+
+        .tech-list li {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            padding: 0.35rem 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+
+        .check {
+            color: #10b981;
+            margin-top: 0.25rem;
+            font-weight: bold;
+        }
+
+        .wireframe-card {
+            background: #1e293b;
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+        }
+
+        .wireframe-title {
+            color: #fcd34d;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .wireframe-desc {
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .components-box {
+            background: #334155;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+        }
+
+        .components-title {
+            color: #c084fc;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .component-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .component-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            line-height: 1.5;
+        }
+
+        .arrow {
+            color: #10b981;
+            margin-top: 0.25rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            .tech-grid,
+            .component-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Project 4: Travel Journal for Educators</h1>
+            <p class="subtitle">Mobile App Project - Complete Wireframe & Tech Stack</p>
+        </header>
+
+        <div class="project-header">
+            <div class="header-content">
+                <div class="icon-box">
+                    <i data-lucide="smartphone" style="width: 32px; height: 32px;"></i>
+                </div>
+                <div>
+                    <div class="project-title">Travel Journal for Educators</div>
+                    <div class="project-type">Mobile App Project</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title"><span>⚙️</span> Technology Stack</h3>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-category">Mobile</div>
+                    <ul class="tech-list">
+                        <li><span class="check">✓</span> React Native (Expo or bare workflow)</li>
+                        <li><span class="check">✓</span> React Navigation</li>
+                        <li><span class="check">✓</span> AsyncStorage</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-category">Alternative</div>
+                    <ul class="tech-list">
+                        <li><span class="check">✓</span> React with mobile-first PWA</li>
+                        <li><span class="check">✓</span> Service Workers</li>
+                        <li><span class="check">✓</span> Responsive design</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-category">Backend</div>
+                    <ul class="tech-list">
+                        <li><span class="check">✓</span> Firebase Authentication</li>
+                        <li><span class="check">✓</span> Firebase Firestore (database)</li>
+                        <li><span class="check">✓</span> Firebase Storage (images/videos)</li>
+                        <li><span class="check">✓</span> Firebase Cloud Functions</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-category">Maps</div>
+                    <ul class="tech-list">
+                        <li><span class="check">✓</span> Google Maps API</li>
+                        <li><span class="check">✓</span> Google Places API</li>
+                        <li><span class="check">✓</span> Geolocation API</li>
+                        <li><span class="check">✓</span> react-native-maps</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-category">Media</div>
+                    <ul class="tech-list">
+                        <li><span class="check">✓</span> React Native Camera</li>
+                        <li><span class="check">✓</span> Image picker</li>
+                        <li><span class="check">✓</span> Image compression</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-category">Social</div>
+                    <ul class="tech-list">
+                        <li><span class="check">✓</span> Share API</li>
+                        <li><span class="check">✓</span> Deep linking</li>
+                        <li><span class="check">✓</span> Social media integration</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-category">Offline</div>
+                    <ul class="tech-list">
+                        <li><span class="check">✓</span> Offline data sync</li>
+                        <li><span class="check">✓</span> AsyncStorage/SQLite</li>
+                        <li><span class="check">✓</span> Queue system for uploads</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-category">Notifications</div>
+                    <ul class="tech-list">
+                        <li><span class="check">✓</span> Firebase Cloud Messaging</li>
+                        <li><span class="check">✓</span> Push notifications</li>
+                        <li><span class="check">✓</span> In-app notifications</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-category">UI</div>
+                    <ul class="tech-list">
+                        <li><span class="check">✓</span> React Native Paper or NativeBase</li>
+                        <li><span class="check">✓</span> Custom components</li>
+                        <li><span class="check">✓</span> Gesture handling</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-category">Tools</div>
+                    <ul class="tech-list">
+                        <li><span class="check">✓</span> Expo CLI</li>
+                        <li><span class="check">✓</span> React Native Debugger</li>
+                        <li><span class="check">✓</span> Firebase Console</li>
+                    </ul>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-category">Deployment</div>
+                    <ul class="tech-list">
+                        <li><span class="check">✓</span> Expo Go (testing)</li>
+                        <li><span class="check">✓</span> App Store (iOS)</li>
+                        <li><span class="check">✓</span> Google Play Store (Android)</li>
+                        <li><span class="check">✓</span> TestFlight (beta)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3 class="section-title"><span>📐</span> Wireframes & Screen Layouts</h3>
+            
+            <div class="wireframe-card">
+                <h4 class="wireframe-title">Onboarding & Authentication</h4>
+                <p class="wireframe-desc">First-time user experience</p>
+                <div class="components-box">
+                    <h5 class="components-title">Components & Features:</h5>
+                    <div class="component-grid">
+                        <div class="component-item"><span class="arrow">▸</span> Splash screen with app logo</div>
+                        <div class="component-item"><span class="arrow">▸</span> Onboarding slides (3-4 screens explaining app features)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Sign up form (email, password, educator verification)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Social login options (Google, Apple)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Profile setup (name, photo, school, subjects taught)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Permission requests (location, camera, notifications)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Skip to browse mode</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wireframe-card">
+                <h4 class="wireframe-title">Home/Feed Screen</h4>
+                <p class="wireframe-desc">Main social feed of travel entries</p>
+                <div class="components-box">
+                    <h5 class="components-title">Components & Features:</h5>
+                    <div class="component-grid">
+                        <div class="component-item"><span class="arrow">▸</span> Top navigation (logo, search, notifications, profile)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Filter tabs (Following, Explore, Popular, Nearby)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Card-based feed layout</div>
+                        <div class="component-item"><span class="arrow">▸</span> Each card: Photo/video, location, educator name, caption</div>
+                        <div class="component-item"><span class="arrow">▸</span> Engagement buttons (like, comment, save, share)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Add new entry FAB (floating action button)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Pull-to-refresh</div>
+                        <div class="component-item"><span class="arrow">▸</span> Infinite scroll</div>
+                        <div class="component-item"><span class="arrow">▸</span> Bottom navigation (Home, Map, Add, Saved, Profile)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wireframe-card">
+                <h4 class="wireframe-title">Create Entry Screen</h4>
+                <p class="wireframe-desc">Add new travel journal entry</p>
+                <div class="components-box">
+                    <h5 class="components-title">Components & Features:</h5>
+                    <div class="component-grid">
+                        <div class="component-item"><span class="arrow">▸</span> Camera/photo selection</div>
+                        <div class="component-item"><span class="arrow">▸</span> Multiple photo upload</div>
+                        <div class="component-item"><span class="arrow">▸</span> Location picker (map with search)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Auto-detect current location</div>
+                        <div class="component-item"><span class="arrow">▸</span> Entry title input</div>
+                        <div class="component-item"><span class="arrow">▸</span> Description/reflection textarea</div>
+                        <div class="component-item"><span class="arrow">▸</span> Educational connection section (How this relates to classroom)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Subject tags (Science, History, Math, Arts, etc.)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Grade level tags</div>
+                        <div class="component-item"><span class="arrow">▸</span> Privacy settings (Public, Followers, Private)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Save as draft option</div>
+                        <div class="component-item"><span class="arrow">▸</span> Post button</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wireframe-card">
+                <h4 class="wireframe-title">Map View</h4>
+                <p class="wireframe-desc">Geographic visualization of travels</p>
+                <div class="components-box">
+                    <h5 class="components-title">Components & Features:</h5>
+                    <div class="component-grid">
+                        <div class="component-item"><span class="arrow">▸</span> Full-screen map</div>
+                        <div class="component-item"><span class="arrow">▸</span> Clustered pins for entries</div>
+                        <div class="component-item"><span class="arrow">▸</span> Current location marker</div>
+                        <div class="component-item"><span class="arrow">▸</span> Filter by user, subject, date range</div>
+                        <div class="component-item"><span class="arrow">▸</span> Pin preview cards on tap</div>
+                        <div class="component-item"><span class="arrow">▸</span> Navigate to full entry from pin</div>
+                        <div class="component-item"><span class="arrow">▸</span> My travels vs. All educators toggle</div>
+                        <div class="component-item"><span class="arrow">▸</span> Travel route lines option</div>
+                        <div class="component-item"><span class="arrow">▸</span> Distance traveled stats</div>
+                        <div class="component-item"><span class="arrow">▸</span> Add entry from map location</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wireframe-card">
+                <h4 class="wireframe-title">Entry Detail View</h4>
+                <p class="wireframe-desc">Full travel journal entry</p>
+                <div class="components-box">
+                    <h5 class="components-title">Components & Features:</h5>
+                    <div class="component-grid">
+                        <div class="component-item"><span class="arrow">▸</span> Photo gallery (swipeable)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Educator profile (tap to view full profile)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Location with map preview</div>
+                        <div class="component-item"><span class="arrow">▸</span> Entry title and date</div>
+                        <div class="component-item"><span class="arrow">▸</span> Full description/reflection</div>
+                        <div class="component-item"><span class="arrow">▸</span> Educational connections section</div>
+                        <div class="component-item"><span class="arrow">▸</span> Tags (subjects, grades)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Engagement stats (likes, comments, saves)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Comment section</div>
+                        <div class="component-item"><span class="arrow">▸</span> Related entries nearby</div>
+                        <div class="component-item"><span class="arrow">▸</span> Share options</div>
+                        <div class="component-item"><span class="arrow">▸</span> Save to collection button</div>
+                        <div class="component-item"><span class="arrow">▸</span> Report/Flag option</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wireframe-card">
+                <h4 class="wireframe-title">User Profile Screen</h4>
+                <p class="wireframe-desc">Personal or other educator's profile</p>
+                <div class="components-box">
+                    <h5 class="components-title">Components & Features:</h5>
+                    <div class="component-grid">
+                        <div class="component-item"><span class="arrow">▸</span> Cover photo and profile picture</div>
+                        <div class="component-item"><span class="arrow">▸</span> Name, school, subjects taught</div>
+                        <div class="component-item"><span class="arrow">▸</span> Bio/About section</div>
+                        <div class="component-item"><span class="arrow">▸</span> Travel stats (countries, cities, entries)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Follow/Following counts</div>
+                        <div class="component-item"><span class="arrow">▸</span> Edit profile button (own profile)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Settings gear icon</div>
+                        <div class="component-item"><span class="arrow">▸</span> Entry grid (photo thumbnails)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Map of travels</div>
+                        <div class="component-item"><span class="arrow">▸</span> Collections/Albums</div>
+                        <div class="component-item"><span class="arrow">▸</span> Saved classroom resources</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wireframe-card">
+                <h4 class="wireframe-title">Classroom Integration Screen</h4>
+                <p class="wireframe-desc">Tools for using travels in teaching</p>
+                <div class="components-box">
+                    <h5 class="components-title">Components & Features:</h5>
+                    <div class="component-grid">
+                        <div class="component-item"><span class="arrow">▸</span> My classroom resources library</div>
+                        <div class="component-item"><span class="arrow">▸</span> Create lesson plan from entry</div>
+                        <div class="component-item"><span class="arrow">▸</span> Entry-to-worksheet converter</div>
+                        <div class="component-item"><span class="arrow">▸</span> Virtual field trip builder (sequence entries)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Student sharing tools (safe, curated content)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Print-friendly formats</div>
+                        <div class="component-item"><span class="arrow">▸</span> Export to Google Classroom</div>
+                        <div class="component-item"><span class="arrow">▸</span> QR code generator for entries</div>
+                        <div class="component-item"><span class="arrow">▸</span> Presentation mode</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wireframe-card">
+                <h4 class="wireframe-title">Search & Discover</h4>
+                <p class="wireframe-desc">Find relevant content</p>
+                <div class="components-box">
+                    <h5 class="components-title">Components & Features:</h5>
+                    <div class="component-grid">
+                        <div class="component-item"><span class="arrow">▸</span> Search bar (locations, educators, subjects)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Recent searches</div>
+                        <div class="component-item"><span class="arrow">▸</span> Trending destinations</div>
+                        <div class="component-item"><span class="arrow">▸</span> Recommended educators to follow</div>
+                        <div class="component-item"><span class="arrow">▸</span> Browse by subject category</div>
+                        <div class="component-item"><span class="arrow">▸</span> Browse by grade level</div>
+                        <div class="component-item"><span class="arrow">▸</span> Curated collections (World Wonders, Science Sites, etc.)</div>
+                        <div class="component-item"><span class="arrow">▸</span> Nearby entries map view</div>
+                        <div class="component-item"><span class="arrow">▸</span> Filter and sort options</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
